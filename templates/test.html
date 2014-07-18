@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container" style="width:720px">
+
+<div id="header" style="background-color:#99d05b;">
+<h1 style="margin-bottom:0;">{{ main_title }}</h1>
+</div>
+
+<div id="p1" style="background-color:#0;height:540px;width:360px;float:left;">
+<img src="uploads/1.jpg">
+</div>
+
+<div id="p2" style="background-color:#0;height:540px;width:360px;float:left;">
+<img src="uploads/2.jpg">
+</div>
+
+<div id="p3" style="background-color:#0;height:540px;width:360px;float:left;">
+<img src="uploads/3.jpg">
+</div>
+
+<div id="p4" style="background-color:#0;height:540px;width:360px;float:left;">
+<img src="uploads/4.jpg">
+</div>
+
+<div id="caption" style="background-color:#0;clear:both;text-align:left;">
+{% for caption in captions %}
+{{ caption }} <br/>
+{% end %}
+
+</div>
+
+<div id="buttons" style="background-color:#FFA600;clear:both;text-align:center;">
+<form enctype="multipart/form-data" action="/upload" method="post">
+File: <input type="file" name="file1" /><br/>
+Caption: <input type="text" name="text1" /><br/>
+<br/>
+<input type="submit" value="upload" />
+</form>
+
+</div>
+
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+Volos 2014 summer school</div>
+
+</div>
+
+</body>
+</html>
