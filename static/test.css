@@ -1,11 +1,8 @@
-/*----- Tabs -----*/
-.tabs {
+/*.tabs {
     width:100%;
     display:inline-block;
 }
  
-    /*----- Tab Links -----*/
-    /* Clearfix */
     .tab-links:after {
         display:block;
         clear:both;
@@ -38,8 +35,7 @@
         background:#fff;
         color:#4c4c4c;
     }
- 
-    /*----- Content of Tabs -----*/
+
     .tab-content {
         padding:15px;
         border-radius:3px;
@@ -53,4 +49,9 @@
  
         .tab.active {
             display:block;
-        }
+        }*/
+
+h1 {
+    /*background-color:#99d05b*/
+    background:#9194EE
+}

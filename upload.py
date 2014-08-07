@@ -6,7 +6,7 @@ counter = 0
 
 captions = range(4)
 
-define("port", default=80, help="run on the given port", type=int)
+define("port", default=8080, help="run on the given port", type=int)
 
 class MyStaticFileHandler(tornado.web.StaticFileHandler):
     def set_extra_headers(self, path):
@@ -18,7 +18,9 @@ class Application(tornado.web.Application):
     def __init__(self):
 
         settings = dict(
+        debug=True,
         template_path=os.path.join(os.path.dirname(__file__), "templates"),
+        static_path=os.path.join(os.path.dirname(__file__), "static"),
         )
 
         handlers = [
