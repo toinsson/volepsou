@@ -1,12 +1,10 @@
 import tornado.httpserver, tornado.ioloop, tornado.options, tornado.web, os.path, random, string
-from tornado.options import define, options
 
 
 counter = 0
 
 captions = range(4)
 
-define("port", default=8080, help="run on the given port", type=int)
 
 class MyStaticFileHandler(tornado.web.StaticFileHandler):
     def set_extra_headers(self, path):
@@ -115,9 +113,15 @@ class UploadHandler(tornado.web.RequestHandler):
 
 # def crop_image():
 
+from tornado.options import define, options
 
+define("port", default=8080, help="run on the given port", type=int)
+define("debug_mode", default=False, help="Turn on the debug mode - reload new code")
 
 def main():
+    # parse cmd line for options
+    tornado.options.parse_command_line()
+
     http_server = tornado.httpserver.HTTPServer(Application())
     http_server.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()

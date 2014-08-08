@@ -14,10 +14,6 @@
     <link rel = "stylesheet" href = "{{ static_url("test.css") }}">
     <script src="{{ static_url("test.js") }}">></script>
 
-    <!-- <link rel = "stylesheet" href = "{{ static_url("main.css") }}"> -->
-    <!-- <link rel = "stylesheet" href = "{{ static_url("colorbox.css") }}"> -->
-    <!-- // <script src="{{ static_url("jquery.colorbox.js") }}">></script> -->
-
 </head>
 
 <body>
@@ -36,6 +32,21 @@
                 <img src="uploads/3.jpg">
                 <img src="uploads/4.jpg">
             </div>
+        </div>
+
+        <div id="caption" style="background-color:#0;clear:both;text-align:left;">
+            {% for caption in captions %}
+            {{ caption }} <br/>
+            {% end %}
+        </div>
+
+        <div id="buttons" style="background-color:#FFA600;clear:both;text-align:center;">
+            <form enctype="multipart/form-data" action="/upload" method="post">
+            File: <input type="file" name="file1" /><br/>
+            Caption: <input type="text" name="text1" /><br/>
+            <br/>
+            <input type="submit" value="upload" />
+            </form>
         </div>
 
         <div data-role="footer">
